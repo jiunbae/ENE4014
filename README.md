@@ -1,4 +1,4 @@
-# Programming Languages Homeworkd 1
+# Programming Languages Homework 1
 
 Write C/C++ functions that builds and runs a FSA and an LR parser, and runs regular expressions.
 
