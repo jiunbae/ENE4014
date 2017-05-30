@@ -1,11 +1,13 @@
 # Makefile
 #
 
+CXXFLAGS=-std=c++0x
+CXX=g++ ${CXXFLAGS}
+
 all: fsa lr_parser regexp
 
 clean:
 	${RM} *.o fsa lr_parser regexp
-
 
 fsa: fsa_main.o fsa.o
 	${CXX} -o fsa fsa_main.o fsa.o
