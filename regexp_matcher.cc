@@ -26,7 +26,7 @@ bool BuildRegExpMatcher(const char* regexp, RegExpMatcher* regexp_matcher) {
 		return first < second;
 	});
 
-	for (auto& element in elements) {
+	for (auto& element : elements) {
 		if (element.str == "#") {
 			element.str = "";
 		}
