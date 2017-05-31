@@ -111,6 +111,10 @@ void FiniteStateAutomaton::next_lambda(states& from, int start) const
 		if (not element.str.empty() or element.state != current)
 			break;
 
+		if (from.find(element.next_state) != from.end()) {
+			continue;
+		}
+
 		from.insert(element.next_state);
 
 		int j;
@@ -121,9 +125,7 @@ void FiniteStateAutomaton::next_lambda(states& from, int start) const
 		}
 
 		if (elements[j].str.empty()) {
-			if (from.find(j) != from.end()) {
-				next_lambda(from, j);
-			}
+			next_lambda(from, j);
 		}
 	}
 }

@@ -56,7 +56,6 @@ vector<int> reg_parse(int init_state, const string& regexp, int& max_state, vect
 			if (regexp[index] >= 'a' and regexp[index] <= 'z') {
 				next.push_back(++max_state);
 				elements->push_back(Element(state, max_state, string({ regexp[index] })));
-
 			} else if (regexp[index] == '.') {
 				max_state++;
 				for (char ch = 'a'; ch <= 'z'; ch++) {
@@ -153,8 +152,9 @@ vector<int> reg_parse(int init_state, const string& regexp, int& max_state, vect
 					next.push_back(max_state);
 				}
 				index = bracketEnd;
-			} else
+			} else {
 				REGEX_ERROR
+			}
 		}
 
 		prev = current;
