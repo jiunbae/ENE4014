@@ -17,7 +17,6 @@
 #endif
 
 #define lambda '#'
-#define in :
 #define NOT_INIT -1
 // Valid characters are alphanumeric and underscore (A-Z,a-z,0-9,_).
 // Epsilon moves in NFA are represented by empty strings.

@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include <string.h>
+#include <stdlib.h>
 #include "fsa.h"
 
 #ifdef _MSC_VER 
@@ -16,7 +17,6 @@
 #endif
 
 #define lambda '#'
-#define in :
 #define NOT_INIT -1
 
 #define REGEX_ERROR exit(1);

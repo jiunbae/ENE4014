@@ -9,6 +9,12 @@
 #include <stack>
 #include <map>
 
+#ifdef _MSC_VER 
+	#define and &&
+	#define or ||
+	#define not !
+#endif
+
 using namespace std;
 
 enum LRAction {
