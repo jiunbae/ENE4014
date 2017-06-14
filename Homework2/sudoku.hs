@@ -6,7 +6,7 @@ varList = [0,0,3,0,0,0,2,0,5,0,0,0,9,0,5,0,0,7,5,8,0,3,0,9,0,1,4,0,0,1,0,0,4,0,0
 blkList = [1,1,2,2,2,3,3,3,3,1,1,2,1,2,2,2,3,3,1,1,1,1,5,2,2,3,3,4,4,4,4,5,5,6,6,3,4,4,4,5,5,5,6,6,6,7,4,4,5,5,6,6,6,6,7,7,8,8,5,9,9,9,9,7,7,8,8,8,9,8,9,9,7,7,7,7,8,8,8,9,9]
 
 parseMatrix :: [Int] -> [[Int]]
-parseMatrix list = [drop (9*i) (take (9*(i+1)) list) | i <- [0..8]]
+parseMatrix list = [drop (9 * i) (take (9 * (i + 1)) list) | i <- [0..8]]
 
 parseSection :: [Int] -> Map Int [(Int, Int)]
 parseSection list = Map.fromList[(x, [(fromInteger (fst y `div` 9), fromInteger (fst y `mod` 9)) | y <- zip [0..] blkList, snd y == x]) | x <- [1..9]]
