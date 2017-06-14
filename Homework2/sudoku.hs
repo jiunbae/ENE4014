@@ -42,5 +42,8 @@ sudokuRec matrix sections coord = if (0, -1) == next
                                                 next = matrix `nextStep` coord
                                                 valid = filter (\x -> fst x) [sudokuRec (setMatrix matrix next e) sections next | e <- [1..9], isValid matrix sections next e]
 
-squigglySudoku :: [Int] -> [Int] -> [[Int]]
-squigglySudoku varList blkList = snd (sudokuRec (parseMatrix varList) (parseSection blkList) (0,0))
+flatten :: [[a]] -> [a]         
+flatten xs = (\z n -> foldr (\x y -> foldr z y x) n xs) (:) []
+
+squigglySudoku :: [Int] -> [Int] -> [Int]
+squigglySudoku varList blkList = flatten (snd (sudokuRec (parseMatrix varList) (parseSection blkList) (0,0)))
